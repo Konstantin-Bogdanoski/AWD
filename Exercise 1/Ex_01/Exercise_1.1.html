@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    @author Konstantin Bogdanoski (konstantin.b@live.com)
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 1.1</title>
+</head>
+<body>
+<p>Креирајте вредност, доделете и вредност и прикажете ја:</p>
+<p id="data"></p>
+<button onclick="showString()">Прикажи String</button>
+<button onclick="showFive()">Прикажи Број</button>
+<button id="hiddenButton" onclick="addFive()" style="display: none">Додади Број</button>
+<button onclick="helloWorld()">Hello World</button>
+<script>
+    function showString() {
+        let x = 1;
+        document.getElementById("data").textContent = "What it do baby? + integer: " + x;
+        document.getElementById("hiddenButton").style.display = "none";
+    }
+
+    function showFive() {
+        document.getElementById("data").textContent = 5;
+        document.getElementById("hiddenButton").style.display = "inline";
+    }
+
+    function addFive() {
+        let x = parseInt(document.getElementById("data").textContent);
+        x += 5;
+        document.getElementById("data").textContent = x;
+    }
+
+    function helloWorld() {
+        let hello = "Hello ";
+        document.getElementById("data").innerText = (hello + "World");
+    }
+</script>
+</body>
+</html>

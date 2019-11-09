@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    @author Konstantin Bogdanoski (konstantin.b@live.com)
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3.1</title>
+    <script rel="script" src="index.js"></script>
+    <style>
+        #container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (min-width: 768px) {
+            #container {
+                width: 750px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #container {
+                width: 970px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #container {
+                width: 1170px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div id="container">
+        <span>Input file(s):</span><br>
+        <input type="file" id="1">
+        <br>
+    </div>
+    <aside>
+        <button class="buttons" onclick="addNewFile()">Add File</button>
+        <button class="buttons" onclick="removeLastFile()">Remove Last File</button>
+    </aside>
+</div>
+</body>
+</html>

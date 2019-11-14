@@ -1,0 +1,11 @@
+Testing Singleton!
+Creating i1
+i1 was created at time [Number: 1509741286079]
+Creating i2 at time:  1509741286080
+i2 was created with time [Number: 1509741286079]
+Checking if i1 and i2 are the same variable:  true
+Creating i3 in different execution context at time:  1509741286081
+i3 was created with time [Number: 1509741286079]
+Checking if i1 and i3 are the same variable: true
+Checking if i2 and i3 are the same variable: true
+Checking if i1 and i2 are the same variable: true

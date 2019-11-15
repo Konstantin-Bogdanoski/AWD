@@ -1,7 +1,7 @@
 /**
  @author Konstantin Bogdanoski (konstantin.b@live.com)
  */
-import "./NPC";
+import NPC from "./NPC";
 
 class Hero extends NPC {
     damage;

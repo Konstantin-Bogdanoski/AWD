@@ -126,6 +126,6 @@ while (heroes.length > 0 || npcs.length > 0) {
 }
 
 if (win)
-    console.log("<bold>WINNER:</bold> " + heroes[0].name + ", HP: " + heroes[0].hp + " | Heroes length: " + heroes.length);
+    console.log("WINNER: " + heroes[0].name + ", HP: " + heroes[0].hp + " | Heroes length: " + heroes.length);
 else
     console.error("HEROES LOST!");

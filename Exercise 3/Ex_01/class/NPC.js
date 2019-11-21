@@ -3,26 +3,16 @@
  */
 
 class NPC {
-    static idCounter = 1;
-    static radius = 20;
-    id;
     name;
     hp;
 
-    color;
-
-    constructor(name, hp = 100) {
-        this._id = NPC.idCounter++;
+    constructor(name = "NPC", hp = 100) {
         this._name = name;
         this._hp = hp;
     }
 
     status() {
         return this.name + " - " + this.hp;
-    }
-
-    get id() {
-        return this._id;
     }
 
     get name() {
@@ -36,10 +26,4 @@ class NPC {
     set hp(value) {
         this._hp = value;
     }
-
-    get radius() {
-        return NPC.radius;
-    }
 }
-
-export default NPC;

@@ -1,14 +1,13 @@
 /**
  @author Konstantin Bogdanoski (konstantin.b@live.com)
  */
-import NPC from "./NPC";
 
 class Hero extends NPC {
     damage;
     boost = 0;
 
-    constructor(name, hp = 100, damage = 10) {
-        super(id, name, hp);
+    constructor(name = "HERO", hp = 100, damage = 10) {
+        super(name, hp);
         this.damage = damage;
     }
 
@@ -28,5 +27,3 @@ class Hero extends NPC {
         this._boost = value;
     }
 }
-
-export default Hero;

@@ -39,20 +39,11 @@ let newReleases = [
 
 // DO Not change before this
 
-// FIRST WAY - ONLY FILTER
-let popular1 = newReleases.filter(value => {
+let popular = newReleases.filter(value => {
     if (parseFloat(value["rating"]) >= 5.0) {
         return value;
     }
-});
-
-// SECOND WAY - MAP AND FILTER
-let popular2 = newReleases.map(value => value).filter(value => {
-    if (parseFloat(value["rating"]) >= 5.0) {
-        return value;
-    }
-});
+}).map(value => value["id"]);
 // Do not change after this
 
-console.log(popular1); // Retuns [ 654356453, 675465 ]
-console.log(popular2);
+console.log(popular); // Retuns [ 654356453, 675465 ]

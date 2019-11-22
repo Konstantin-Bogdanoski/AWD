@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Задача 3 - 1 Колоквиум по НВД 05.11.2016</title>
+    <meta charset="utf-8"/>
+    <!--[if IE]>
+    <script type="text/javascript" src="excanvas.js"></script><![endif]-->
+</head>
+<body style="width: 600px;">
+
+<div id="canvasDiv"></div>
+<div class="actionBar" style="width: 300px; margin:auto; ">
+    <div class="actionBarTitle" style="clear:both;">Character Abilities</div>
+    <div class="actionButtonsDiv" style="width: 300px; float: left;">
+        <div class="actionButton blinkButton" style="float: left;  width: 50px">
+            <img src="ui/icon-blink-sm.png" alt="Blink Icon" height="30" width="30" style=""><br/>
+            Blink
+        </div>
+        <div class="actionButton jumpButton" style="width: 50px; float: left; margin-left: 50px; ">
+            <img src="ui/icon-jump-sm.png" alt="Jump Icon" height="30" width="30" style="background-color: indianred;">
+            <br/>
+            Jump
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="game.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.actionButton').keydown(function () {
+            $('.actionButton').css("background-color", "red");
+        })
+    });
+
+</script>
+
+</body>
+</html>

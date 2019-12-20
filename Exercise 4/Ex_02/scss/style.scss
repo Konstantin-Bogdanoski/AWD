@@ -1,6 +1,9 @@
 /**
 * @author Konstantin Bogdanoski (konstantin.b@live.com)
 */
+
+@import "../Ex_03/scss/gradients";
+
 $direction: 75deg;
 
 // Custom random function
@@ -175,3 +178,10 @@ p {
 a {
   color: white;
 }
+
+.zad3 {
+  @extend html:before;
+  background: stripes(shades-of(Grey, 50));
+  top: 1em;
+}
+

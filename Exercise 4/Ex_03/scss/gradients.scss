@@ -3,7 +3,11 @@
 /// @return {List}
 
 @function shades-of($color: grey, $number: 50) {
-
+  $shades: ();
+  @for $i from 1 to $number {
+    $shades: append($shades, darken($color, $i), comma);
+  }
+  @return $shades;
 }
 
 // Output

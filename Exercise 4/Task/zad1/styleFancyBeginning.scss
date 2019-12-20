@@ -1,0 +1,55 @@
+//dodadete go bodyStyle.scss dokumentot
+
+
+/*
+promenlivi:
+
+$font-first:
+$font-second:
+$height:
+$background_color:
+$left:
+$right:
+*/
+.first {
+  //iskoristete promenliva za fontot
+
+}
+
+.second {
+  //iskoristete promenliva za fontot
+}
+
+.containerOne {
+  //dodadete visina na container-ot
+  //dodadete boja za container-ot
+  .left {
+    //extend za position
+    position: absolute;
+    //definirajte prostor od levo i od gore za ovoj div
+  }
+
+  .right {
+    position: absolute;
+    //definirajte prostor od levo i od gore za ovoj div kako zbir od .left div-ot i dopolnitelnoto potrebno rastojanie od levo
+  }
+}
+
+.boxes {
+  //zaednicki karakteristiki
+}
+
+.containerTwo {
+
+  position: absolute;
+  //definirajte ja pozicijata
+
+  .boxOne {
+    //dodadete go veke definiraniot kod vo .boxes i soodvetno dopolnete go
+  }
+
+  .boxTwo {
+    //dodadete go veke definiraniot kod vo .boxes i soodvetno dopolnete go
+  }
+
+}

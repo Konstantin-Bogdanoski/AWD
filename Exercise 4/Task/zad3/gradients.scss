@@ -1,0 +1,15 @@
+/// @param {Color} $color (grey) - Base color
+/// @param {number} $number (50) - number of shades
+/// @return {List}
+
+@function shades-of($color: grey, $number: 50) {
+
+}
+
+// Output
+// ---
+#{"shades-red"} {
+  @each $shade in shades-of(red) {
+    shade: #{$shade}
+  }
+}

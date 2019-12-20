@@ -1,0 +1,15 @@
+{
+  "name": "ex_01",
+  "version": "1.0.0",
+  "description": "Exercise 4 - 01",
+  "main": "PrvaZadacaBeginning.html",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\"",
+    "scss": "node-sass --watch scss -o css"
+  },
+  "author": "Konstantin Bogdanoski",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.13.0"
+  }
+}

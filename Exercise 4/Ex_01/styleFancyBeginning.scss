@@ -1,0 +1,64 @@
+//dodadete go bodyStyle.scss dokumentot
+@import "bodyStyleBeginning";
+
+/*
+promenlivi:
+*/
+$font-first: Helvetica, sans-serif;
+$font-second: "Times New Roman", Times, serif;
+$height: 200px;
+$background_color: $background-color;
+$left: 20%;
+$right: $left + 20px;
+$top: 10%;
+
+.first {
+  //iskoristete promenliva za fontot
+  font-family: $font-first;
+}
+
+.second {
+  //iskoristete promenliva za fontot
+  font-family: $font-second;
+}
+
+.containerOne {
+  //dodadete visina na container-ot
+  height: $height;
+  //dodadete boja za container-ot
+  background-color: $background-color;
+
+  .left {
+    //extend za position
+    position: absolute;
+    //definirajte prostor od levo i od gore za ovoj div
+    top: $top;
+    left: $left;
+  }
+
+  .right {
+    position: absolute;
+    //definirajte prostor od levo i od gore za ovoj div kako zbir od .left div-ot i dopolnitelnoto potrebno rastojanie od levo
+    top: $top;
+    right: $right;
+  }
+}
+
+.boxes {
+  //zaednicki karakteristiki
+}
+
+.containerTwo {
+
+  position: absolute;
+  //definirajte ja pozicijata
+
+  .boxOne {
+    //dodadete go veke definiraniot kod vo .boxes i soodvetno dopolnete go
+  }
+
+  .boxTwo {
+    //dodadete go veke definiraniot kod vo .boxes i soodvetno dopolnete go
+  }
+
+}

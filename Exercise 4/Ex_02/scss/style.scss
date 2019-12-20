@@ -1,3 +1,6 @@
+/**
+* @author Konstantin Bogdanoski (konstantin.b@live.com)
+*/
 $direction: 75deg;
 
 // Custom random function
@@ -36,7 +39,6 @@ $direction: 75deg;
       @warn '`#{nth($colors, $i)}` skipped because it is only one item long while it should be 2: (color, color-stop).';
     }
   }
-
   @return $gradients;
 }
 
@@ -108,14 +110,24 @@ $direction: 75deg;
 
 @function stripes($colors, $direction: 90deg, $random: false) {
   // TODO: Use the previous functions
-
+  @if $random {
+    @return linear-gradient(
+                    $direction,
+                    _stripes-random-stops($colors)
+    );
+  } @else {
+    @return linear-gradient(
+                    $direction,
+                    _stripes-equal-stops($colors)
+    );
+  }
 }
 
 
 html {
   position: relative;
   height: 100%;
-  background: #333;
+  background: #333333;
 
   &:before,
   &:after {
@@ -139,7 +151,7 @@ html {
     background: stripes($equal-stops, $direction);
 
     // Random stops
-    //background: stripes($equal-stops, 90deg, $random: true); 
+    background: stripes($equal-stops, 90deg, $random: true);
   }
 
   &:after {

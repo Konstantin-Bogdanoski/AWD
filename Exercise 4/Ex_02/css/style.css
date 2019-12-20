@@ -1,0 +1,33 @@
+/**
+* @author Konstantin Bogdanoski (konstantin.b@live.com)
+*/
+html {
+  position: relative;
+  height: 100%;
+  background: #333333; }
+  html:before, html:after {
+    position: absolute;
+    content: '';
+    height: 1em;
+    top: 0;
+    left: 0;
+    right: 0; }
+  html:after {
+    top: auto;
+    bottom: 0; }
+  html:before {
+    background: linear-gradient(75deg, #1abc9c 10%, #2ecc71 10%, #2ecc71 20%, #3498db 20%, #3498db 30%, #9b59b6 30%, #9b59b6 40%, #34495e 40%, #34495e 50%, #f1c40f 50%, #f1c40f 60%, #e67e22 60%, #e67e22 70%, #e74c3c 70%, #e74c3c 80%, #ecf0f1 80%, #ecf0f1 90%, #95a5a6 90%);
+    background: linear-gradient(90deg, #1abc9c 12%, #2ecc71 12%, #2ecc71 17%, #3498db 17%, #3498db 38%, #9b59b6 38%, #9b59b6 46%, #34495e 46%, #34495e 53%, #f1c40f 53%, #f1c40f 55%, #e67e22 55%, #e67e22 77%, #e74c3c 77%, #e74c3c 79%, #ecf0f1 79%, #ecf0f1 96%, #95a5a6 96%); }
+  html:after {
+    background: linear-gradient(90deg, #1abc9c 10% 10%, #2ecc71 12.5% 10%, #2ecc71 12.5% 20%, #3498db 28% 20%, #3498db 28% 30%, #9b59b6 35% 30%, #9b59b6 35% 40%, #34495e 60% 40%, #34495e 60% 50%, #f1c40f 69% 50%, #f1c40f 69% 60%, #e67e22 83% 60%, #e67e22 83% 70%, #e74c3c 88% 70%, #e74c3c 88% 80%, #ecf0f1 96% 80%, #ecf0f1 96% 90%, #95a5a6 100% 90%); }
+
+body {
+  padding-top: 20px; }
+
+p {
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif; }
+
+a {
+  color: white; }

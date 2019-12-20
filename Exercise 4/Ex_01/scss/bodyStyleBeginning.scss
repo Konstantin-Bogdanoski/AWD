@@ -1,0 +1,15 @@
+/**
+* @author Konstantin Bogdanoski (konstantin.b@live.com)
+*/
+$background-color: #EBAD99; //vnesete boja;
+
+body {
+  //background: //iskoristete promenliva
+  background: $background-color;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}

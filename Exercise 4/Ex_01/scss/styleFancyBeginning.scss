@@ -1,20 +1,24 @@
+/**
+* @author Konstantin Bogdanoski (konstantin.b@live.com)
+*/
 //dodadete go bodyStyle.scss dokumentot
-@import "bodyStyleBeginning";
+@import "../scss/bodyStyleBeginning";
 
 /*
 promenlivi:
 */
 $font-first: Helvetica, sans-serif;
 $font-second: "Times New Roman", Times, serif;
-$height: 200px;
+$height: 200;
 $background_color: $background-color;
-$left: 20%;
-$right: $left + 20px;
-$top: 10%;
+$left: 50;
+$right: $left + 150;
+$top: 400;
 
 .first {
   //iskoristete promenliva za fontot
   font-family: $font-first;
+  font-weight: bold;
 }
 
 .second {
@@ -32,33 +36,52 @@ $top: 10%;
     //extend za position
     position: absolute;
     //definirajte prostor od levo i od gore za ovoj div
-    top: $top;
-    left: $left;
+    top: $top + px;
+    left: $left + px;
   }
 
   .right {
     position: absolute;
     //definirajte prostor od levo i od gore za ovoj div kako zbir od .left div-ot i dopolnitelnoto potrebno rastojanie od levo
-    top: $top;
-    right: $right;
+    top: $top + px;
+    right: $right + px;
   }
 }
 
 .boxes {
   //zaednicki karakteristiki
+  align-self: center;
+  width: 10%;
+  height: 10%;
+  margin: 70px 10px 10px 40%;
+  clear: both;
+  display: block;
+  text-align: center;
 }
 
 .containerTwo {
-
-  position: absolute;
   //definirajte ja pozicijata
+  position: absolute;
+  display: block;
+  width: 99%;
+  height: 62%;
+  text-align: center;
+  background-color: powderblue;
+  z-index: -1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
   .boxOne {
     //dodadete go veke definiraniot kod vo .boxes i soodvetno dopolnete go
+    @extend .boxes;
+    border: 2px solid red;
   }
 
   .boxTwo {
     //dodadete go veke definiraniot kod vo .boxes i soodvetno dopolnete go
+    @extend .boxes;
+    border: 2px solid blue;
   }
-
 }

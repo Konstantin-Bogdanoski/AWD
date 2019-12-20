@@ -1,0 +1,12 @@
+/**
+* @author Konstantin Bogdanoski (konstantin.b@live.com)
+*/
+body {
+  background: #EBAD99;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}

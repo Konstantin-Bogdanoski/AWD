@@ -1,0 +1,73 @@
+/**
+* @author Konstantin Bogdanoski (konstantin.b@live.com)
+*/
+body {
+  background: #EBAD99;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+/*
+promenlivi:
+*/
+.first {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.second {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.containerOne {
+  height: 200;
+  background-color: #EBAD99;
+}
+
+.containerOne .left {
+  position: absolute;
+  top: 400px;
+  left: 50px;
+}
+
+.containerOne .right {
+  position: absolute;
+  top: 400px;
+  right: 200px;
+}
+
+.boxes, .containerTwo .boxOne, .containerTwo .boxTwo {
+  align-self: center;
+  width: 10%;
+  height: 10%;
+  margin: 70px 10px 10px 40%;
+  clear: both;
+  display: block;
+  text-align: center;
+}
+
+.containerTwo {
+  position: absolute;
+  display: block;
+  width: 99%;
+  height: 62%;
+  text-align: center;
+  background-color: powderblue;
+  z-index: -1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerTwo .boxOne {
+  border: 2px solid red;
+}
+
+.containerTwo .boxTwo {
+  border: 2px solid blue;
+}

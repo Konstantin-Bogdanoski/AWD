@@ -10,8 +10,9 @@
 <div id="app" class="container">
     <h1>Vue Password Strength Indicator</h1>
     <label class="frmLabel" for="password">Password</label>
-    <input placeholder="Enter your password" name="password" id="password" class="frmField" type="password" @input=""
-           v-model=""/>
+    <input placeholder="Enter your password" name="password" id="password" class="frmField" type="password"
+           @input="validate_password"
+           v-model="message"/>
     <p class="frmValidation" :class="{'frmValidation--passed' : message.length > 7}">
         <i class="frmIcon fas" :class="message.length > 7 ? 'fa-check' : 'fa-times'"></i>
         Longer than 7 characters

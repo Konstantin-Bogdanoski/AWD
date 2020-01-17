@@ -30,6 +30,20 @@ $z-index-navigation-inner: $z-index-navigation-button + 25;
   width: 50px;
   height: 50px;
   margin: 90px auto;
+  @if ($hasBackground) {
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #445566;
+      -webkit-animation: material-menu-background $animation-time $animation-easing forwards;
+      animation: material-menu-background $animation-time $animation-easing forwards;
+    }
+  }
 
   span {
     top: 50%;
@@ -100,57 +114,42 @@ $z-index-navigation-inner: $z-index-navigation-button + 25;
       animation: material-arrow-background $animation-time $animation-easing forwards;
     }
   }
-}
 
-.material--burger.material--arrow {
-  span, span:before, span:after {
-    animation-duration: $animation-time;
-    animation-fill-mode: forwards;
-    animation-timing-function: $animation-easing;
-    @if ($hasBackground) {
-      background-color: $nav-color;
-      -webkit-animation-duration: 300ms;
-      -webkit-animation-fill-mode: forwards;
-      -webkit-animation-timing-function: ease-in-out;
-    } @else {
-      background-color: $nav-color-active;
+  &.material--arrow {
+    span, span:before, span:after {
+      animation-duration: $animation-time;
+      animation-fill-mode: forwards;
+      animation-timing-function: $animation-easing;
+      @if ($hasBackground) {
+        background-color: $nav-color;
+        -webkit-animation-duration: 300ms;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-timing-function: ease-in-out;
+      } @else {
+        background-color: $nav-color-active;
+      }
     }
-  }
 
-  span {
-    @if ($hasBackground) {
-      -webkit-animation-name: material-arrow;
+    span {
+      @if ($hasBackground) {
+        -webkit-animation-name: material-arrow;
+      }
+      animation-name: material-arrow;
     }
-    animation-name: material-arrow;
-  }
 
-  span:before {
-    @if ($hasBackground) {
-      -webkit-animation-name: material-arrow-before;
+    span:before {
+      @if ($hasBackground) {
+        -webkit-animation-name: material-arrow-before;
+      }
+      animation-name: material-arrow-before;
     }
-    animation-name: material-arrow-before;
-  }
 
-  span:after {
-    @if ($hasBackground) {
-      -webkit-animation-name: material-arrow-after;
+    span:after {
+      @if ($hasBackground) {
+        -webkit-animation-name: material-arrow-after;
+      }
+      animation-name: material-arrow-after;
     }
-    animation-name: material-arrow-after;
-  }
-}
-
-@if ($hasBackground) {
-  .material--burger:after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #445566;
-    -webkit-animation: material-menu-background $animation-time $animation-easing forwards;
-    animation: material-menu-background $animation-time $animation-easing forwards;
   }
 }
 

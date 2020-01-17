@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Memory game</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel='stylesheet' href='css/font-awesome.css'>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+<div id="app">
+    <div class="info">
+        <div><span class="label">Time:</span><span class="value"></span></div>
+        <div><span class="label">Turns:</span><span class="value"></span></div>
+    </div>
+    <div class="cards">
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+    </div>
+    <div class="splash">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="title">You won!</div>
+            <div class="score">Score: {{ score }}</div>
+            <button class="newGame">New game</button>
+        </div>
+    </div>
+</div>
+<script src='./js/jquery.min.js'></script>
+<script src='./js/vue.js'></script>
+<script src='./js/lodash.js'></script>
+<script src='./js/moment.js'></script>
+
+
+<script src="js/index.js"></script>
+
+
+</body>
+
+</html>

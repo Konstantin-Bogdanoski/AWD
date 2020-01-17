@@ -1,0 +1,34 @@
+/* Basic Config
+ * $nav-size (px) sets the size of the menu button
+ * $nav-color (#) is set the be the main color when a background is set
+ * $nav-color-active (#) is the color of the button when toggled. If theres no background, it is also the main color when untoggled
+ * $hasBackground (boolean) sets whether there's a background or not.
+ */
+
+$nav-size: 50px;
+$nav-color: #fff;
+$nav-color-active: #445566;
+$hasBackground: false;
+
+// Advanced Config
+$animation-time: 300ms;
+$animation-easing: ease-in-out;
+
+$z-index-navigation-button: 500;
+$z-index-navigation-inner: $z-index-navigation-button + 25;
+
+// Your SCSS code here.
+
+
+h1 {
+  text-align: center;
+  color: $nav-color-active;
+  font-family: "Lato", sans-serif;
+  font-size: 118px;
+
+  span {
+    display: block;
+    font-weight: normal;
+    font-size: 28px;
+  }
+}

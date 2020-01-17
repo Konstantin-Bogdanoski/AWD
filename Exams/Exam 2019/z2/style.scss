@@ -1,0 +1,70 @@
+// TODO
+// Write this SCSS function
+// Use the SCSS functions: adjust-hue and transparentize to generate color for the current step.
+// This function returns one color that can be used in the shaded function
+
+// $color: the color of the shade
+// $number-of-steps: the number of steps (shades to generate)
+// $current-step: Generate the specific color for  
+@function mod-example($color, $number-of-steps, $current-step) {
+
+}
+
+
+// TODO
+// Write this SCSS function to generate all the shade for the element!
+// Use call to execute the function given to the $color modifier variable
+// This function returns the value of the box-shadow attribute as specified in style_solution.css
+
+// Parameters:
+// $color: the color of the shade
+// $number-of-steps: the number of steps (shades to generate)
+// $step-size: difference between steps 
+// $color-modifier: function to call to change the color of each shade layer
+@function shaded($color: black, $number-of-steps: 5, $step-size: 5, $color-modifier: none) {
+
+}
+
+
+// Do not change from this point onward
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #333;
+  height: 100%;
+  display: flex;
+}
+
+.block,
+.block2 {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  margin: auto;
+  padding: 20px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.6s, transform 0.6s;
+  width: 30vw;
+
+  &:hover {
+    transform: translate3d(-10px, -10px, 0);
+  }
+}
+
+.block {
+  background-color: #0bc;
+
+  &:hover {
+    box-shadow: shaded(#0bc, 50, 1, mod-example);
+  }
+}
+
+.block2 {
+  background-color: #f50;
+
+  &:hover {
+    box-shadow: shaded(#f50, 10, 10, mod-example);
+  }
+}

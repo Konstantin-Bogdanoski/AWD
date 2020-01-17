@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time tracking with VueJS</title>
+
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container-fluid">
+    <!-- The VueJS app holder -->
+    <div id="app" class="panel panel-default">
+        <div class="panel-heading">
+            <h1>Time Tracker with VueJS</h1>
+        </div>
+        <!-- Top section for choosing hourly payment -->
+        <h5 class="top-info">
+            Hourly payment:
+            <!-- bind the select with values using vue -->
+            <select class="">
+                <option></option>
+            </select>
+        </h5>
+
+        <div class="panel-body">
+            <!-- If there are no tasks completed -->
+            <h5 class="empty-text text-center">No tasks yet...</h5>
+
+
+            <!-- The tasks -->
+            <ul class="records">
+                <li>
+                    <span class="hours"></span>
+                    <div class="pull-right">
+                        <span class="edit-record glyphicon glyphicon-pencil"></span>
+                        <span class="remove-record glyphicon glyphicon-trash"></span>
+                    </div>
+                </li>
+            </ul>
+            <!-- Total time spend and money earned -->
+            <div class="total-info">
+                <span>Total time spend: </span>
+                <span>Total money earned: </span>
+            </div>
+        </div>
+        <!-- New entry form -->
+        <div class="panel-footer">
+            <div class="col-lg-9 col-sm-9 col-xs-7">
+                <input type="text" placeholder="Add the description of your task" class="form-control">
+            </div>
+            <div class="col-lg-2 col-sm-2 col-xs-3">
+                <select class="form-control">
+                    <option> hours</option>
+                </select>
+            </div>
+            <div class="col-lg-1 col-sm-1 col-xs-1">
+                <button class="btn btn-primary">Add</button>
+                <button class="btn btn-primary">Edit</button>
+            </div>
+        </div>
+    </div>
+    <!-- The app holder ends here -->
+</div>
+<script src='js/vue.js'></script>
+<script src='js/bootstrap.min.js'></script>
+
+<script src="js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+.col-lg-10, .col-lg-2 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.panel-body {
+    padding: 0;
+}
+
+.panel-footer {
+    height: 47px !important;
+    padding: 5px 0px;
+}
+
+.panel-heading h1 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.panel-heading {
+    background: #f5f5f5 !important;
+}
+
+.total-info {
+    padding: 4px 12px;
+    background: #607D8B;
+}
+
+.total-info span {
+    color: white;
+    margin-right: 23px;
+    font-weight: bold;
+}
+
+.empty-text {
+    padding: 4px 12px;
+}
+
+.top-info {
+    padding: 5px 12px;
+    margin: 0;
+    background: #3a81a2;
+    color: white;
+    text-align: right;
+}
+
+.top-info select {
+    color: black;
+    border: none;
+    border-radius: 0px;
+    background: #f5f5f5;
+    width: 50px;
+}
+
+.records {
+    padding: 0;
+    margin: 0;
+}
+
+.records li {
+    display: block;
+    padding: 5px 12px 5px 0;
+    background: #dedede;
+    border-bottom: 1px solid #607d8b;
+}
+
+.hours {
+    background: #FFC107;
+    padding: 7px;
+}
+
+.remove-record, .edit-record {
+    cursor: pointer;
+
+}

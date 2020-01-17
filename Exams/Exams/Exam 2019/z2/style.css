@@ -1,0 +1,86 @@
+/*
+Error: Function shaded finished without @return
+        on line 59 of /home/konstantin/Desktop/FCSE/AWD/Labs/Exams/Exams/Exam 2019/z2/style.scss
+
+54: 
+55: .block {
+56:   background-color: #0bc;
+57: 
+58:   &:hover {
+59:     box-shadow: shaded(#0bc, 50, 1, mod-example);
+60:   }
+61: }
+62: 
+63: .block2 {
+64:   background-color: #f50;
+
+Backtrace:
+/home/konstantin/Desktop/FCSE/AWD/Labs/Exams/Exams/Exam 2019/z2/style.scss:59
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/funcall.rb:266:in `block (2 levels) in perform_sass_fn'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/funcall.rb:264:in `catch'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/funcall.rb:264:in `block in perform_sass_fn'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:86:in `perform_arguments'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/funcall.rb:261:in `perform_sass_fn'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/funcall.rb:144:in `block in _perform'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:108:in `block in with_function'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:108:in `with_function'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/funcall.rb:143:in `_perform'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `map'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:161:in `visit'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:36:in `css_tree'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:391:in `run'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
+/usr/share/koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
+/usr/share/koala/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
+/usr/share/koala/bin/sass:22:in `load'
+/usr/share/koala/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Function shaded finished without @return\A         on line 59 of /home/konstantin/Desktop/FCSE/AWD/Labs/Exams/Exams/Exam 2019/z2/style.scss\A \A 54: \A 55: .block {\A 56:   background-color: #0bc;\A 57: \A 58:   &:hover {\A 59:     box-shadow: shaded(#0bc, 50, 1, mod-example);\A 60:   }\A 61: }\A 62: \A 63: .block2 {\A 64:   background-color: #f50;";
+}

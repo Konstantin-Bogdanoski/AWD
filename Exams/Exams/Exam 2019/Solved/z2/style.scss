@@ -1,17 +1,29 @@
-// TODO
 // Write this SCSS function
 // Use the SCSS functions: adjust-hue and transparentize to generate color for the current step.
 // This function returns one color that can be used in the shaded function
 
 // $color: the color of the shade
 // $number-of-steps: the number of steps (shades to generate)
-// $current-step: Generate the specific color for  
+// $current-step: Generate the specific color for
 @function mod-example($color, $number-of-steps, $current-step) {
-
+  $current-color: $color;
+  @if ($current-step==1) {
+    @return $current-color;
+  }
+  @for $i from 1 to $number-of-steps {
+    @if ($number-of-steps > 10) {
+      $current-color: adjust_hue($current-color, 1);
+      $current-color: transparentize($current-color, (1/$number-of-steps));
+    } @else {
+      $current-color: adjust_hue($current-color, 5);
+      $current-color: transparentize($current-color, (1/$number-of-steps));
+    }
+    @if ($i==$current-step) {
+      @return $current-color;
+    }
+  }
 }
 
-
-// TODO
 // Write this SCSS function to generate all the shade for the element!
 // Use call to execute the function given to the $color modifier variable
 // This function returns the value of the box-shadow attribute as specified in style_solution.css
@@ -19,10 +31,16 @@
 // Parameters:
 // $color: the color of the shade
 // $number-of-steps: the number of steps (shades to generate)
-// $step-size: difference between steps 
+// $step-size: difference between steps
 // $color-modifier: function to call to change the color of each shade layer
 @function shaded($color: black, $number-of-steps: 5, $step-size: 5, $color-modifier: none) {
-
+  $shades: ();
+  $size: $step-size;
+  @for $i from 1 to $number-of-steps {
+    $shades: append($shades, $size+px $size+px 0 mod-example($color, $number-of-steps, $i), $separator: comma);
+    $size: $size+$step-size;
+  }
+  @return $shades;
 }
 
 

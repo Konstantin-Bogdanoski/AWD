@@ -1,0 +1,372 @@
+/* Basic Config
+ * $nav-size (px) sets the size of the menu button
+ * $nav-color (#) is set the be the main color when a background is set
+ * $nav-color-active (#) is the color of the button when toggled. If theres no background, it is also the main color when untoggled
+ * $hasBackground (boolean) sets whether there's a background or not.
+ */
+
+$nav-size: 50px;
+$nav-color: #fff;
+$nav-color-active: #445566;
+$hasBackground: true;
+
+// Advanced Config
+$animation-time: 300ms;
+$animation-easing: ease-in-out;
+
+$z-index-navigation-button: 500;
+$z-index-navigation-inner: $z-index-navigation-button + 25;
+
+// Your SCSS code here.
+
+* {
+  box-sizing: border-box;
+}
+
+.material--burger {
+  cursor: pointer;
+  padding: 12.5px;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 90px auto;
+
+  span {
+    top: 50%;
+    transform-origin: center center;
+    animation-name: material-menu;
+    @if ($hasBackground=="true") {
+      -webkit-transform-origin: center center;
+      -webkit-animation-name: material-menu;
+    }
+  }
+
+  span, span:before, span:after {
+    width: 25px;
+    height: 3px;
+    position: absolute;
+    animation-fill-mode: forwards;
+
+    @if ($hasBackground) {
+      background-color: $nav-color;
+      z-index: $z-index-navigation-inner;
+      -webkit-animation-duration: $animation-time;
+      animation-duration: $animation-time;
+      -webkit-animation-fill-mode: forwards;
+      -webkit-animation-timing-function: $animation-easing;
+      animation-timing-function: $animation-easing;
+      transition: background-color $animation-time $animation-easing;
+    } @else {
+      background-color: $nav-color-active;
+      z-index: $z-index-navigation-inner;
+      animation-duration: $animation-time;
+      animation-timing-function: $animation-easing;
+      transition: background-color $animation-time $animation-easing;
+    }
+  }
+
+  span:before, span:after {
+    @if ($hasBackground) {
+      content: '';
+    } @else {
+      content: "";
+    }
+    display: block;
+  }
+
+  span:before {
+    top: 300%;
+    transform-origin: right bottom;
+    animation-name: material-menu-before;
+    @if ($hasBackground) {
+      -webkit-transform-origin: right bottom;
+      -webkit-animation-name: material-menu-before;
+    }
+  }
+
+  span:after {
+    bottom: 300%;
+    transform-origin: right top;
+    animation-name: material-menu-after;
+    @if ($hasBackground) {
+      -webkit-transform-origin: right top;
+      -webkit-animation-name: material-menu-after;
+    }
+  }
+
+  @if ($hasBackground) {
+    .material--arrow:after {
+      -webkit-animation: material-arrow-background $animation-time $animation-easing forwards;
+      animation: material-arrow-background $animation-time $animation-easing forwards;
+    }
+  }
+}
+
+.material--burger.material--arrow {
+  span, span:before, span:after {
+    animation-duration: $animation-time;
+    animation-fill-mode: forwards;
+    animation-timing-function: $animation-easing;
+    @if ($hasBackground) {
+      background-color: $nav-color;
+      -webkit-animation-duration: 300ms;
+      -webkit-animation-fill-mode: forwards;
+      -webkit-animation-timing-function: ease-in-out;
+    } @else {
+      background-color: $nav-color-active;
+    }
+  }
+
+  span {
+    @if ($hasBackground) {
+      -webkit-animation-name: material-arrow;
+    }
+    animation-name: material-arrow;
+  }
+
+  span:before {
+    @if ($hasBackground) {
+      -webkit-animation-name: material-arrow-before;
+    }
+    animation-name: material-arrow-before;
+  }
+
+  span:after {
+    @if ($hasBackground) {
+      -webkit-animation-name: material-arrow-after;
+    }
+    animation-name: material-arrow-after;
+  }
+}
+
+@if ($hasBackground) {
+  .material--burger:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #445566;
+    -webkit-animation: material-menu-background $animation-time $animation-easing forwards;
+    animation: material-menu-background $animation-time $animation-easing forwards;
+  }
+}
+
+@-webkit-keyframes material-arrow-background {
+  100% {
+    @if ($hasBackground) {
+      -webkit-transform: rotate(180deg) scale(0);
+    }
+    transform: rotate(180deg) scale(0);
+  }
+}
+
+@keyframes material-arrow-background {
+  100% {
+    @if ($hasBackground) {
+      -webkit-transform: rotate(180deg) scale(0);
+    }
+    transform: rotate(180deg) scale(0);
+  }
+}
+
+@-webkit-keyframes material-menu-background {
+  0% {
+    @if ($hasBackground) {
+      -webkit-transform: rotate(180deg) scale(0);
+    }
+    transform: rotate(180deg) scale(0);
+  }
+  100% {
+    @if ($hasBackground) {
+      -webkit-transform: rotate(360deg) scale(1);
+    }
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes material-menu-background {
+  0% {
+    @if ($hasBackground) {
+      -webkit-transform: rotate(180deg) scale(0);
+    }
+    transform: rotate(180deg) scale(0);
+  }
+  100% {
+    @if ($hasBackground) {
+      -webkit-transform: rotate(360deg) scale(1);
+    }
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@-webkit-keyframes material-arrow {
+  100% {
+    @if ($hasBackground) {
+      -webkit-transform: rotate(180deg);
+    }
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes material-arrow {
+  100% {
+    @if ($hasBackground) {
+      -webkit-transform: rotate(180deg);
+    }
+    transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes material-arrow-before {
+  100% {
+    top: 0;
+    @if ($hasBackground) {
+      -webkit-transform: rotate(-40deg) scaleX(0.7);
+    }
+    transform: rotate(-40deg) scaleX(0.7);
+  }
+}
+
+@keyframes material-arrow-before {
+  100% {
+    top: 0;
+    @if ($hasBackground) {
+      -webkit-transform: rotate(-40deg) scaleX(0.7);
+    }
+    transform: rotate(-40deg) scaleX(0.7);
+  }
+}
+
+@-webkit-keyframes material-arrow-after {
+  100% {
+    bottom: 0;
+    @if ($hasBackground) {
+      -webkit-transform: rotate(40deg) scaleX(0.7);
+    }
+    transform: rotate(40deg) scaleX(0.7);
+  }
+}
+
+@keyframes material-arrow-after {
+  100% {
+    bottom: 0;
+    @if ($hasBackground) {
+      -webkit-transform: rotate(40deg) scaleX(0.7);
+    }
+    transform: rotate(40deg) scaleX(0.7);
+  }
+}
+
+@-webkit-keyframes material-menu {
+  0% {
+    @if ($hasBackground) {
+      -webkit-transform: rotate(180deg);
+    }
+    transform: rotate(180deg);
+  }
+  100% {
+    @if ($hasBackground) {
+      -webkit-transform: rotate(360deg);
+    }
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes material-menu {
+  0% {
+    @if ($hasBackground) {
+      -webkit-transform: rotate(180deg);
+    }
+    transform: rotate(180deg);
+  }
+  100% {
+    @if ($hasBackground) {
+      -webkit-transform: rotate(360deg);
+    }
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes material-menu-before {
+  0% {
+    top: 0;
+    @if ($hasBackground) {
+      -webkit-transform: rotate(-40deg) scaleX(0.7);
+    }
+    transform: rotate(-40deg) scaleX(0.7);
+  }
+  100% {
+    top: 300%;
+    @if ($hasBackground) {
+      -webkit-transform: rotate(0) scaleX(1);
+    }
+    transform: rotate(0) scaleX(1);
+  }
+}
+
+@keyframes material-menu-before {
+  0% {
+    top: 0;
+    @if ($hasBackground) {
+      -webkit-transform: rotate(-40deg) scaleX(0.7);
+    }
+    transform: rotate(-40deg) scaleX(0.7);
+  }
+  100% {
+    top: 300%;
+    @if ($hasBackground) {
+      -webkit-transform: rotate(0) scaleX(1);
+    }
+    transform: rotate(0) scaleX(1);
+  }
+}
+
+@-webkit-keyframes material-menu-after {
+  0% {
+    bottom: 0;
+    @if ($hasBackground) {
+      -webkit-transform: rotate(40deg) scaleX(0.7);
+    }
+    transform: rotate(40deg) scaleX(0.7);
+  }
+  100% {
+    bottom: 300%;
+    @if ($hasBackground) {
+      -webkit-transform: rotate(0) scaleX(1);
+    }
+    transform: rotate(0) scaleX(1);
+  }
+}
+
+@keyframes material-menu-after {
+  0% {
+    bottom: 0;
+    @if ($hasBackground) {
+      -webkit-transform: rotate(40deg) scaleX(0.7);
+    }
+    transform: rotate(40deg) scaleX(0.7);
+  }
+  100% {
+    bottom: 300%;
+    @if ($hasBackground) {
+      -webkit-transform: rotate(0) scaleX(1);
+    }
+    transform: rotate(0) scaleX(1);
+  }
+}
+
+h1 {
+  text-align: center;
+  color: #445566;
+  font-family: "Lato", sans-serif;
+  font-size: 118px;
+
+  span {
+    display: block;
+    font-weight: normal;
+    font-size: 28px;
+  }
+}

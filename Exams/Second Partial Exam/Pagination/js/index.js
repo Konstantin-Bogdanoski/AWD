@@ -20,23 +20,28 @@ let app = new Vue({
         goToPage(index) {
             this.offeredPages = [];
             this.usersOnPage = [];
-            let usersIndex = index * this.pageSize - this.pageSize;
-            for (let i = usersIndex; i < usersIndex + 10; i++) {
-                this.usersOnPage.push(this.users[i]);
-            }
             this.currentPage = index;
-            if (index < 3)
-                for (let i = 1; i <= 5; i++) {
-                    this.offeredPages.push(i);
-                }
-            else
-                for (let i = -2; i < 3; i++)
-                    this.offeredPages.push((i + index));
-        }
 
+            let usersIndex = index * this.pageSize - this.pageSize;
+
+            for (let i = usersIndex; i < usersIndex + 10; i++)
+                this.usersOnPage.push(this.users[i]);
+
+            if (index <= this.totalPages)
+                if (index < 3)
+                    for (let i = 1; i <= 5; i++)
+                        this.offeredPages.push(i);
+                else if (index > this.totalPages - 2)
+                    for (let i = this.totalPages - 4; i <= this.totalPages; i++)
+                        this.offeredPages.push(i);
+                else
+                    for (let i = -2; i < 3; i++)
+                        this.offeredPages.push((i + index));
+
+        }
     },
     created() {
         this.fillUsers();
-        this.goToPage(4);
+        this.goToPage(1);
     }
 });

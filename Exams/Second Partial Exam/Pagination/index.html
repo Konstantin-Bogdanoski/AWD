@@ -39,7 +39,13 @@
                     <button v-else type="button" class="page-link" @click="goToPage(index)">{{index}}</button>
                 </li>
                 <li class="page-item">
-                    <button type="button" class="page-link" @click="goToPage(currentPage+1)">Next</button>
+                    <button v-if="currentPage < totalPages" type="button" class="page-link"
+                            @click="goToPage(currentPage+1)">Next
+                    </button>
+                    <button v-else type="button" class="page-link disabled" disabled>Next</button>
+                    <button v-if="currentPage < totalPages" type="button" class="page-link"
+                            @click="goToPage(totalPages)">{{totalPages}}
+                    </button>
                 </li>
             </ul>
         </nav>

@@ -18,45 +18,49 @@
         <h5 class="top-info">
             Hourly payment:
             <!-- bind the select with values using vue -->
-            <select class="">
-                <option v-for="option in options">{{option}}$</option>
+            <select class="" v-model="hourRate" @change="updateTotal">
+                <option v-for="payment in hourlyPay">{{payment}}</option>
             </select>
         </h5>
 
         <div class="panel-body">
             <!-- If there are no tasks completed -->
-            <h5 class="empty-text text-center">No tasks yet...</h5>
+            <h5 v-if="!records.length" class="empty-text text-center">No tasks yet...</h5>
 
 
             <!-- The tasks -->
-            <ul class="records">
-                <li v-for="record in records">
-                    <span class="hours"></span>
+            <ul v-else class="records">
+                <li v-for="(record, index) in records">
+                    <span class="hours">{{record.hours}}</span>
+                    {{record.description}}
                     <div class="pull-right">
-                        <span class="edit-record glyphicon glyphicon-pencil" @click="editRecord(record)"></span>
-                        <span class="remove-record glyphicon glyphicon-trash" @click="deleteRecord(record)"></span>
+                        <span class="edit-record glyphicon glyphicon-pencil" @click="showEditForm(index)"></span>
+                        <span class="remove-record glyphicon glyphicon-trash" @click="deleteRecord(index)"></span>
                     </div>
                 </li>
             </ul>
             <!-- Total time spend and money earned -->
             <div class="total-info">
                 <span>Total time spend: {{totalTime}}</span>
-                <span>Total money earned: {{totalMoney}}</span>
+                <span>Total money earned: {{totalEarned}}</span>
             </div>
         </div>
         <!-- New entry form -->
         <div class="panel-footer">
             <div class="col-lg-9 col-sm-9 col-xs-7">
-                <input type="text" placeholder="Add the description of your task" class="form-control">
+                <input type="text" v-model="record.description" placeholder="Add the description of your task"
+                       class="form-control">
             </div>
             <div class="col-lg-2 col-sm-2 col-xs-3">
-                <select class="form-control">
-                    <option v-for="hour in hours">{{hour}} hours</option>
+                <select class="form-control" v-model="record.hours">
+                    <option v-for="hour in hours">{{hour}}</option>
                 </select>
             </div>
             <div class="col-lg-1 col-sm-1 col-xs-1">
-                <button class="btn btn-primary" @click="addRecord()">Add</button>
-                <button class="btn btn-primary" @click="editRecord()">Edit</button>
+                <input v-if="showEdit == 1" type="hidden" v-model="index" placeholder="Add the description of your task"
+                       class="form-control">
+                <button v-if="showEdit == 0" class="btn btn-primary" @click="addRecord(record)">Add</button>
+                <button v-if="showEdit == 1" class="btn btn-primary" @click="editRecord(index, record)">Edit</button>
             </div>
         </div>
     </div>

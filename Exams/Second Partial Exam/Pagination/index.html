@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style/index.css">
+    <link rel="stylesheet" type="text/css" href="style/bootstrap.min.css">
+</head>
+<body>
+<div id="app" class="col-sm-12">
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>User ID</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="user in usersOnPage">
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.ID}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li v-if="currentPage == 1" class="page-item">
+                    <button type="button" class="page-link disabled" disabled>Previous</button>
+                </li>
+                <li v-else class="page-item">
+                    <button type="button" class="page-link" @click="goToPage(currentPage-1)">Previous</button>
+                </li>
+                <li class="page-item" v-for="index in offeredPages">
+                    <button v-if="currentPage == index" type="button" class="page-link" @click="goToPage(index)"><strong
+                            style="color: red">{{index}}</strong></button>
+                    <button v-else type="button" class="page-link" @click="goToPage(index)">{{index}}</button>
+                </li>
+                <li class="page-item">
+                    <button type="button" class="page-link" @click="goToPage(currentPage+1)">Next</button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<script rel="script" src="js/vue.js"></script>
+<script rel="script" src="js/bootstrap.min.js"></script>
+
+<script rel="script" src="js/index.js"></script>
+</body>
+</html>

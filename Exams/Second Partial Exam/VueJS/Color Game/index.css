@@ -1,0 +1,40 @@
+#colored {
+  max-width: 700px;
+}
+
+#colored span {
+  display: inline-block;
+  text-align: center;
+  padding: 70px;
+  margin: 3px;
+  background: #ccc;
+}
+
+
+/* Colored */
+.red {
+  background: #ef5350 !important;
+}
+
+.blue {
+  background: #03a9f4 !important;
+}
+
+.green {
+  background: #4caf50 !important;
+}
+
+.list-complete-item {
+  transition: all .5s;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.list-complete-enter, .list-complete-leave-active {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.list-complete-leave-active {
+  position: absolute;
+}

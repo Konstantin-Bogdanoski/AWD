@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Game VueJS</title>
+    <link rel="stylesheet" href="index.css" type="text/css">
+</head>
+<body>
+<div id="colored">
+    <h2>{{title}}</h2>
+    <hr>
+
+    <button @click="filterClear()">All</button>
+    <button @click="filterItems('red')">Red</button>
+    <button @click="filterItems('blue')">Blue</button>
+    <button @click="filterItems('green')">Green</button>
+    <button @click="shuffleItems()">Shuffle</button>
+
+    <transition-group name="list-complete" tag="p">
+            <span v-for="item in filteredItems" v-bind:key="item.id"
+                  v-bind:style="{background: item.color}"
+                  class="list-complete-item block">
+                {{item.id}}
+            </span>
+    </transition-group>
+</div>
+<script src="vue.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

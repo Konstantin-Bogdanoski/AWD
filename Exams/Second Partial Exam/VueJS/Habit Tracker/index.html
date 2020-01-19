@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS Habit Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="container">
+    <div id="app">
+        <h1>Habit Tracker</h1>
+        <div>
+            <input type="text" placeholder="Habit Title" v-model="habit.title"/><br/>
+            <input type="number" placeholder="Repetitions" v-model="habit.required_reps"/><br/>
+            <button id="creator" @click="addHabit()">Add</button>
+        </div>
+        <div class="row habit">
+            <div class="four columns" transition="slide"
+                 v-for="(hab, index) in habits">
+                <h4>{{hab.title}}</h4>
+                <div class="shell">
+                    <div class="bar" :style="{width: 100 - hab.completed_reps * (100 / hab.required_reps) + '%'}"></div>
+                </div>
+                <div class="lower">
+          <span>
+            <i class="fa fa-times" @click="removeHabit(index)"></i>
+          </span>
+                    <button id="progress" @click="updateProgress(index)">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                    <div v-if="!hab.completed">{{hab.completed_reps}}/{{hab.required_reps}} times</div>
+                    <div v-if="hab.completed" transition="slide">Complete!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/vue.js"></script>
+
+<script src="js/index.js"></script>
+
+</body>
+</html>
